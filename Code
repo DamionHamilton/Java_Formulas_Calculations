@@ -1,0 +1,159 @@
+Java_Formulas_Calculations
+==========================
+
+Compute Formulas for Area of Trapezoid,Circle, surface area of Cylinder, Vol. of sphere
+
+
+// Damion Hamilton
+// Formulas Program
+// 
+
+package java_formulas;
+import java.util.Scanner;
+import java.lang.*;
+import java.io.*;
+import java.text.*;
+import java.math.*;
+import java.text.DecimalFormat;
+import java.lang.String;
+/**
+ *
+ * @author Damion Hamilton
+ * 
+ */
+public class Java_Formulas {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+     
+        int number;
+        do
+        {
+            System.out.println("\t1. Area of a trapezoid");
+            System.out.println("\t2. Surface Area of Cylinder");
+            System.out.println("\t3. Volume of Sphere");
+            System.out.println("\t4. Area of Circle");
+            System.out.println("\t5. Exit");
+            System.out.println("\t Please Enter corespnding number 1, 2, 3, or 4 to Exit Program");
+
+
+
+
+        
+        Scanner scan = new Scanner (System.in);
+        number = scan.nextInt();
+        
+        switch(number)
+        {
+            case 1: Area_Trapeziod();
+                break;
+            case 2: SArea_Cylinder();
+                break;
+            case 3: Volume_Sphere();
+                break;
+            case 4: Area_Circle();
+                break;
+            case 5: System.out.println("Thank you for using this program.");   
+                 break;
+            default: System.out.println("Please follow directions" + "only 1,2,3,4 and 5 to quit.");
+                break;
+        }
+        
+        }while(number != 5);
+        
+    }
+     // Following code is Formula to calculate Area of a Trapeziod
+    
+    public static void Area_Trapeziod()
+    {
+        
+        Scanner scan = new Scanner (System.in);
+        
+    System.out.println("Area of a Trapeziod");
+    
+   
+    double base1, base2, hight, trape;
+    
+    System.out.println("Enter base 1:");
+    base1 = scan.nextDouble();
+    
+     System.out.println("Enter base 2:");
+    base2 = scan.nextDouble();
+    
+    System.out.println("Enter hight:");
+    hight = scan.nextDouble();
+    
+    DecimalFormat format1 = new DecimalFormat ("0.00");
+     trape = .5*(base1+ base2)*hight;
+     
+     System.out.println("The area of the Trapeziod is ==>" +" "+ format1.format (trape));
+       
+     
+     
+    }
+    
+    // Following code is Formula to calculate Surface area of cylinder
+    
+     public static void SArea_Cylinder()
+    {
+         Scanner scan = new Scanner (System.in);
+                 
+    System.out.println("Surface Area of a Cylinder");
+    
+    double radius, hight, cylinder;
+    
+    System.out.println("Enter radius:");
+    radius = scan.nextDouble();
+    
+    System.out.println("Enter hight:");
+    hight = scan.nextDouble();
+    
+    DecimalFormat format1 = new DecimalFormat ("0.00");
+     cylinder = 2*3.1416*(Math.pow(radius,2)) + 2*3.1416*radius*(Math.pow(hight,2));
+     
+     System.out.println("The Surface area of the Cylinder is ==>" +" " + format1.format (cylinder));
+             
+    }            
+     
+     // Following code is Formula to calculate volume of Sphere
+     
+    public static void Volume_Sphere()
+    {
+         Scanner scan = new Scanner (System.in);
+         
+    System.out.println("Volume of Sphere");
+    
+    double s, vol;
+    
+    System.out.println("Enter Size:");
+    s = scan.nextDouble();
+    
+    DecimalFormat format1 = new DecimalFormat ("0.00");
+     vol = (1.33)*3.1416*(Math.pow(s,3));
+     
+     System.out.println("The Volume is ==>" + " " + format1.format (vol));
+             
+    }  
+    
+    // Following Code calculates Area of Circle
+    
+    public static void Area_Circle()
+    {
+         Scanner scan = new Scanner (System.in);
+         
+    System.out.println("Area of Circle");
+    
+    double Pie = 3.1416, radius,area;
+    
+    System.out.println("Enter Radius:");
+    radius = scan.nextDouble();
+    
+    DecimalFormat format1 = new DecimalFormat ("0.00");
+     area = 3.1416*(Math.pow(radius,2));
+     
+     System.out.println("The area is ==>" + " " + format1.format (area));
+             
+    }   
+}
